@@ -11,10 +11,23 @@
 		13B07FBC1A68108700A75B9A /* AppDelegate.mm in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB01A68108700A75B9A /* AppDelegate.mm */; };
 		13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB51A68108700A75B9A /* Images.xcassets */; };
 		13B07FC11A68108700A75B9A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
-		333374927F670DCEAB357888 /* Pods_dispatcher.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BFF86490DFA3D43CDE2B47A3 /* Pods_dispatcher.framework */; };
+		333374927F670DCEAB357888 /* (null) in Frameworks */ = {isa = PBXBuildFile; };
+		6F7E3E0C1E6BAFCA6F161C45 /* Pods_dispatcher.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 89DB879497829980E73D386E /* Pods_dispatcher.framework */; };
 		81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */; };
 		A4FF301030BF59645D27D73F /* Pods_dispatcher_dispatcherTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 30B996EDA6244A7966803329 /* Pods_dispatcher_dispatcherTests.framework */; };
-		C1710854297D3E2A00D1F87F /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = C1710853297D3E2A00D1F87F /* GoogleService-Info.plist */; };
+		BF2AA91B496986C29074375B /* Pods_dispatcher_dispatcher_Development.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7B566E1BFC67BF87CBC7CFFB /* Pods_dispatcher_dispatcher_Development.framework */; };
+		C1710859297D51D100D1F87F /* AppDelegate.mm in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB01A68108700A75B9A /* AppDelegate.mm */; };
+		C171085A297D51D100D1F87F /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
+		C171085E297D51D100D1F87F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */; };
+		C171085F297D51D100D1F87F /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB51A68108700A75B9A /* Images.xcassets */; };
+		C1710860297D51D100D1F87F /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = C1710853297D3E2A00D1F87F /* GoogleService-Info.plist */; };
+		C171086E297D522300D1F87F /* AppDelegate.mm in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB01A68108700A75B9A /* AppDelegate.mm */; };
+		C171086F297D522300D1F87F /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
+		C1710873297D522300D1F87F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */; };
+		C1710874297D522300D1F87F /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB51A68108700A75B9A /* Images.xcassets */; };
+		C1710875297D522300D1F87F /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = C1710853297D3E2A00D1F87F /* GoogleService-Info.plist */; };
+		C1710885297D590600D1F87F /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = C1710884297D590600D1F87F /* GoogleService-Info.plist */; };
+		DA7B313F5658180065FE8ABF /* (null) in Frameworks */ = {isa = PBXBuildFile; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,13 +51,21 @@
 		13B07FB61A68108700A75B9A /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = dispatcher/Info.plist; sourceTree = "<group>"; };
 		13B07FB71A68108700A75B9A /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = dispatcher/main.m; sourceTree = "<group>"; };
 		30B996EDA6244A7966803329 /* Pods_dispatcher_dispatcherTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_dispatcher_dispatcherTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		3B4392A12AC88292D35C810B /* Pods-dispatcher.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-dispatcher.debug.xcconfig"; path = "Target Support Files/Pods-dispatcher/Pods-dispatcher.debug.xcconfig"; sourceTree = "<group>"; };
-		5709B34CF0A7D63546082F79 /* Pods-dispatcher.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-dispatcher.release.xcconfig"; path = "Target Support Files/Pods-dispatcher/Pods-dispatcher.release.xcconfig"; sourceTree = "<group>"; };
+		5B7047ABCE5554651560ECCA /* Pods-dispatcher.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-dispatcher.debug.xcconfig"; path = "Target Support Files/Pods-dispatcher/Pods-dispatcher.debug.xcconfig"; sourceTree = "<group>"; };
 		5B7EB9410499542E8C5724F5 /* Pods-dispatcher-dispatcherTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-dispatcher-dispatcherTests.debug.xcconfig"; path = "Target Support Files/Pods-dispatcher-dispatcherTests/Pods-dispatcher-dispatcherTests.debug.xcconfig"; sourceTree = "<group>"; };
+		7B566E1BFC67BF87CBC7CFFB /* Pods_dispatcher_dispatcher_Development.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_dispatcher_dispatcher_Development.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = LaunchScreen.storyboard; path = dispatcher/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		89C6BE57DB24E9ADA2F236DE /* Pods-dispatcher-dispatcherTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-dispatcher-dispatcherTests.release.xcconfig"; path = "Target Support Files/Pods-dispatcher-dispatcherTests/Pods-dispatcher-dispatcherTests.release.xcconfig"; sourceTree = "<group>"; };
-		BFF86490DFA3D43CDE2B47A3 /* Pods_dispatcher.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_dispatcher.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		89DB879497829980E73D386E /* Pods_dispatcher.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_dispatcher.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		AB9CCF3F6C1D14E43C7A1ADE /* Pods-dispatcher.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-dispatcher.release.xcconfig"; path = "Target Support Files/Pods-dispatcher/Pods-dispatcher.release.xcconfig"; sourceTree = "<group>"; };
 		C1710853297D3E2A00D1F87F /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		C1710868297D51D100D1F87F /* dispatcher-Development.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "dispatcher-Development.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		C1710869297D51D100D1F87F /* dispatcher copy-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "dispatcher copy-Info.plist"; path = "/Users/danielbaron/Desktop/dispatcher_2/ios/dispatcher copy-Info.plist"; sourceTree = "<absolute>"; };
+		C171087D297D522300D1F87F /* dispatcher-Staging.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "dispatcher-Staging.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		C171087E297D522300D1F87F /* dispatcher copy2-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "dispatcher copy2-Info.plist"; path = "/Users/danielbaron/Desktop/dispatcher_2/ios/dispatcher copy2-Info.plist"; sourceTree = "<absolute>"; };
+		C1710884297D590600D1F87F /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		CEC28CE5CDC3927967B49841 /* Pods-dispatcher-dispatcher-Development.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-dispatcher-dispatcher-Development.debug.xcconfig"; path = "Target Support Files/Pods-dispatcher-dispatcher-Development/Pods-dispatcher-dispatcher-Development.debug.xcconfig"; sourceTree = "<group>"; };
+		E88DE960DAA837B19CCC9FF5 /* Pods-dispatcher-dispatcher-Development.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-dispatcher-dispatcher-Development.release.xcconfig"; path = "Target Support Files/Pods-dispatcher-dispatcher-Development/Pods-dispatcher-dispatcher-Development.release.xcconfig"; sourceTree = "<group>"; };
 		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
@@ -61,7 +82,24 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				333374927F670DCEAB357888 /* Pods_dispatcher.framework in Frameworks */,
+				333374927F670DCEAB357888 /* (null) in Frameworks */,
+				DA7B313F5658180065FE8ABF /* (null) in Frameworks */,
+				6F7E3E0C1E6BAFCA6F161C45 /* Pods_dispatcher.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C171085B297D51D100D1F87F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BF2AA91B496986C29074375B /* Pods_dispatcher_dispatcher_Development.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C1710870297D522300D1F87F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -102,8 +140,9 @@
 			isa = PBXGroup;
 			children = (
 				ED297162215061F000B7C4FE /* JavaScriptCore.framework */,
-				BFF86490DFA3D43CDE2B47A3 /* Pods_dispatcher.framework */,
 				30B996EDA6244A7966803329 /* Pods_dispatcher_dispatcherTests.framework */,
+				7B566E1BFC67BF87CBC7CFFB /* Pods_dispatcher_dispatcher_Development.framework */,
+				89DB879497829980E73D386E /* Pods_dispatcher.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -118,13 +157,15 @@
 		83CBB9F61A601CBA00E9B192 = {
 			isa = PBXGroup;
 			children = (
-				C1710853297D3E2A00D1F87F /* GoogleService-Info.plist */,
+				C1710880297D583200D1F87F /* GoogleServices */,
 				13B07FAE1A68108700A75B9A /* dispatcher */,
 				832341AE1AAA6A7D00B99B32 /* Libraries */,
 				00E356EF1AD99517003FC87E /* dispatcherTests */,
 				83CBBA001A601CBA00E9B192 /* Products */,
 				2D16E6871FA4F8E400B85C8A /* Frameworks */,
 				BBD78D7AC51CEA395F1C20DB /* Pods */,
+				C1710869297D51D100D1F87F /* dispatcher copy-Info.plist */,
+				C171087E297D522300D1F87F /* dispatcher copy2-Info.plist */,
 			);
 			indentWidth = 2;
 			sourceTree = "<group>";
@@ -136,6 +177,8 @@
 			children = (
 				13B07F961A680F5B00A75B9A /* dispatcher.app */,
 				00E356EE1AD99517003FC87E /* dispatcherTests.xctest */,
+				C1710868297D51D100D1F87F /* dispatcher-Development.app */,
+				C171087D297D522300D1F87F /* dispatcher-Staging.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -143,12 +186,47 @@
 		BBD78D7AC51CEA395F1C20DB /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				3B4392A12AC88292D35C810B /* Pods-dispatcher.debug.xcconfig */,
-				5709B34CF0A7D63546082F79 /* Pods-dispatcher.release.xcconfig */,
 				5B7EB9410499542E8C5724F5 /* Pods-dispatcher-dispatcherTests.debug.xcconfig */,
 				89C6BE57DB24E9ADA2F236DE /* Pods-dispatcher-dispatcherTests.release.xcconfig */,
+				5B7047ABCE5554651560ECCA /* Pods-dispatcher.debug.xcconfig */,
+				AB9CCF3F6C1D14E43C7A1ADE /* Pods-dispatcher.release.xcconfig */,
+				CEC28CE5CDC3927967B49841 /* Pods-dispatcher-dispatcher-Development.debug.xcconfig */,
+				E88DE960DAA837B19CCC9FF5 /* Pods-dispatcher-dispatcher-Development.release.xcconfig */,
 			);
 			path = Pods;
+			sourceTree = "<group>";
+		};
+		C1710880297D583200D1F87F /* GoogleServices */ = {
+			isa = PBXGroup;
+			children = (
+				C1710883297D587400D1F87F /* Production */,
+				C1710882297D586300D1F87F /* Staging */,
+				C1710881297D585600D1F87F /* Development */,
+			);
+			path = GoogleServices;
+			sourceTree = "<group>";
+		};
+		C1710881297D585600D1F87F /* Development */ = {
+			isa = PBXGroup;
+			children = (
+				C1710853297D3E2A00D1F87F /* GoogleService-Info.plist */,
+			);
+			path = Development;
+			sourceTree = "<group>";
+		};
+		C1710882297D586300D1F87F /* Staging */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Staging;
+			sourceTree = "<group>";
+		};
+		C1710883297D587400D1F87F /* Production */ = {
+			isa = PBXGroup;
+			children = (
+				C1710884297D590600D1F87F /* GoogleService-Info.plist */,
+			);
+			path = Production;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -198,6 +276,47 @@
 			productReference = 13B07F961A680F5B00A75B9A /* dispatcher.app */;
 			productType = "com.apple.product-type.application";
 		};
+		C1710855297D51D100D1F87F /* dispatcher-Development */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C1710865297D51D100D1F87F /* Build configuration list for PBXNativeTarget "dispatcher-Development" */;
+			buildPhases = (
+				C1710856297D51D100D1F87F /* [CP] Check Pods Manifest.lock */,
+				C1710857297D51D100D1F87F /* Start Packager */,
+				C1710858297D51D100D1F87F /* Sources */,
+				C171085B297D51D100D1F87F /* Frameworks */,
+				C171085D297D51D100D1F87F /* Resources */,
+				C1710861297D51D100D1F87F /* Bundle React Native code and images */,
+				C1710862297D51D100D1F87F /* [CP] Embed Pods Frameworks */,
+				C1710864297D51D100D1F87F /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "dispatcher-Development";
+			productName = dispatcher;
+			productReference = C1710868297D51D100D1F87F /* dispatcher-Development.app */;
+			productType = "com.apple.product-type.application";
+		};
+		C171086A297D522300D1F87F /* dispatcher-Staging */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C171087A297D522300D1F87F /* Build configuration list for PBXNativeTarget "dispatcher-Staging" */;
+			buildPhases = (
+				C171086C297D522300D1F87F /* Start Packager */,
+				C171086D297D522300D1F87F /* Sources */,
+				C1710870297D522300D1F87F /* Frameworks */,
+				C1710872297D522300D1F87F /* Resources */,
+				C1710876297D522300D1F87F /* Bundle React Native code and images */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "dispatcher-Staging";
+			productName = dispatcher;
+			productReference = C171087D297D522300D1F87F /* dispatcher-Staging.app */;
+			productType = "com.apple.product-type.application";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -230,6 +349,8 @@
 			targets = (
 				13B07F861A680F5B00A75B9A /* dispatcher */,
 				00E356ED1AD99517003FC87E /* dispatcherTests */,
+				C1710855297D51D100D1F87F /* dispatcher-Development */,
+				C171086A297D522300D1F87F /* dispatcher-Staging */,
 			);
 		};
 /* End PBXProject section */
@@ -247,8 +368,28 @@
 			buildActionMask = 2147483647;
 			files = (
 				81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */,
+				C1710885297D590600D1F87F /* GoogleService-Info.plist in Resources */,
 				13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */,
-				C1710854297D3E2A00D1F87F /* GoogleService-Info.plist in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C171085D297D51D100D1F87F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C171085E297D51D100D1F87F /* LaunchScreen.storyboard in Resources */,
+				C171085F297D51D100D1F87F /* Images.xcassets in Resources */,
+				C1710860297D51D100D1F87F /* GoogleService-Info.plist in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C1710872297D522300D1F87F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C1710873297D522300D1F87F /* LaunchScreen.storyboard in Resources */,
+				C1710874297D522300D1F87F /* Images.xcassets in Resources */,
+				C1710875297D522300D1F87F /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -339,6 +480,132 @@
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
+		};
+		C1710856297D51D100D1F87F /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-dispatcher-dispatcher-Development-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C1710857297D51D100D1F87F /* Start Packager */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = "Start Packager";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "export RCT_METRO_PORT=\"${RCT_METRO_PORT:=8081}\"\necho \"export RCT_METRO_PORT=${RCT_METRO_PORT}\" > \"${SRCROOT}/../node_modules/react-native/scripts/.packager.env\"\nif [ -z \"${RCT_NO_LAUNCH_PACKAGER+xxx}\" ] ; then\n  if nc -w 5 -z localhost ${RCT_METRO_PORT} ; then\n    if ! curl -s \"http://localhost:${RCT_METRO_PORT}/status\" | grep -q \"packager-status:running\" ; then\n      echo \"Port ${RCT_METRO_PORT} already in use, packager is either not running or not running correctly\"\n      exit 2\n    fi\n  else\n    open \"$SRCROOT/../node_modules/react-native/scripts/launchPackager.command\" || echo \"Can't start packager automatically\"\n  fi\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		C1710861297D51D100D1F87F /* Bundle React Native code and images */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"$(SRCROOT)/.xcode.env.local",
+				"$(SRCROOT)/.xcode.env",
+			);
+			name = "Bundle React Native code and images";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "set -e\n\nWITH_ENVIRONMENT=\"../node_modules/react-native/scripts/xcode/with-environment.sh\"\nREACT_NATIVE_XCODE=\"../node_modules/react-native/scripts/react-native-xcode.sh\"\n\n/bin/sh -c \"$WITH_ENVIRONMENT $REACT_NATIVE_XCODE\"\n";
+		};
+		C1710862297D51D100D1F87F /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-dispatcher-dispatcher-Development/Pods-dispatcher-dispatcher-Development-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-dispatcher-dispatcher-Development/Pods-dispatcher-dispatcher-Development-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-dispatcher-dispatcher-Development/Pods-dispatcher-dispatcher-Development-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C1710864297D51D100D1F87F /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-dispatcher-dispatcher-Development/Pods-dispatcher-dispatcher-Development-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-dispatcher-dispatcher-Development/Pods-dispatcher-dispatcher-Development-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-dispatcher-dispatcher-Development/Pods-dispatcher-dispatcher-Development-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C171086C297D522300D1F87F /* Start Packager */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = "Start Packager";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "export RCT_METRO_PORT=\"${RCT_METRO_PORT:=8081}\"\necho \"export RCT_METRO_PORT=${RCT_METRO_PORT}\" > \"${SRCROOT}/../node_modules/react-native/scripts/.packager.env\"\nif [ -z \"${RCT_NO_LAUNCH_PACKAGER+xxx}\" ] ; then\n  if nc -w 5 -z localhost ${RCT_METRO_PORT} ; then\n    if ! curl -s \"http://localhost:${RCT_METRO_PORT}/status\" | grep -q \"packager-status:running\" ; then\n      echo \"Port ${RCT_METRO_PORT} already in use, packager is either not running or not running correctly\"\n      exit 2\n    fi\n  else\n    open \"$SRCROOT/../node_modules/react-native/scripts/launchPackager.command\" || echo \"Can't start packager automatically\"\n  fi\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		C1710876297D522300D1F87F /* Bundle React Native code and images */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"$(SRCROOT)/.xcode.env.local",
+				"$(SRCROOT)/.xcode.env",
+			);
+			name = "Bundle React Native code and images";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "set -e\n\nWITH_ENVIRONMENT=\"../node_modules/react-native/scripts/xcode/with-environment.sh\"\nREACT_NATIVE_XCODE=\"../node_modules/react-native/scripts/react-native-xcode.sh\"\n\n/bin/sh -c \"$WITH_ENVIRONMENT $REACT_NATIVE_XCODE\"\n";
 		};
 		C38B50BA6285516D6DCD4F65 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -435,6 +702,24 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		C1710858297D51D100D1F87F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C1710859297D51D100D1F87F /* AppDelegate.mm in Sources */,
+				C171085A297D51D100D1F87F /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C171086D297D522300D1F87F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C171086E297D522300D1F87F /* AppDelegate.mm in Sources */,
+				C171086F297D522300D1F87F /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -499,7 +784,7 @@
 		};
 		13B07F941A680F5B00A75B9A /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 3B4392A12AC88292D35C810B /* Pods-dispatcher.debug.xcconfig */;
+			baseConfigurationReference = 5B7047ABCE5554651560ECCA /* Pods-dispatcher.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
@@ -526,7 +811,7 @@
 		};
 		13B07F951A680F5B00A75B9A /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 5709B34CF0A7D63546082F79 /* Pods-dispatcher.release.xcconfig */;
+			baseConfigurationReference = AB9CCF3F6C1D14E43C7A1ADE /* Pods-dispatcher.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
@@ -582,7 +867,7 @@
 				COPY_PHASE_STRIP = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
-				"EXCLUDED_ARCHS[sdk=iphonesimulator*]" = i386;
+				"EXCLUDED_ARCHS[sdk=iphonesimulator*]" = arm64;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -654,7 +939,7 @@
 				COPY_PHASE_STRIP = YES;
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				"EXCLUDED_ARCHS[sdk=iphonesimulator*]" = i386;
+				"EXCLUDED_ARCHS[sdk=iphonesimulator*]" = arm64;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
@@ -686,6 +971,108 @@
 			};
 			name = Release;
 		};
+		C1710866297D51D100D1F87F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = CEC28CE5CDC3927967B49841 /* Pods-dispatcher-dispatcher-Development.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				ENABLE_BITCODE = NO;
+				INFOPLIST_FILE = "dispatcher copy-Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				OTHER_LDFLAGS = (
+					"$(inherited)",
+					"-ObjC",
+					"-lc++",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.$(PRODUCT_NAME:rfc1034identifier)";
+				"PRODUCT_BUNDLE_IDENTIFIER[sdk=iphoneos*]" = org.reactjs.native.dispatcher;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+				VERSIONING_SYSTEM = "apple-generic";
+			};
+			name = Debug;
+		};
+		C1710867297D51D100D1F87F /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = E88DE960DAA837B19CCC9FF5 /* Pods-dispatcher-dispatcher-Development.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				INFOPLIST_FILE = "dispatcher copy-Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				OTHER_LDFLAGS = (
+					"$(inherited)",
+					"-ObjC",
+					"-lc++",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.$(PRODUCT_NAME:rfc1034identifier)";
+				"PRODUCT_BUNDLE_IDENTIFIER[sdk=iphoneos*]" = org.reactjs.native.dispatcher;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				VERSIONING_SYSTEM = "apple-generic";
+			};
+			name = Release;
+		};
+		C171087B297D522300D1F87F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				ENABLE_BITCODE = NO;
+				INFOPLIST_FILE = "dispatcher copy2-Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				OTHER_LDFLAGS = (
+					"$(inherited)",
+					"-ObjC",
+					"-lc++",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.$(PRODUCT_NAME:rfc1034identifier)";
+				"PRODUCT_BUNDLE_IDENTIFIER[sdk=iphoneos*]" = org.reactjs.native.dispatcher;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+				VERSIONING_SYSTEM = "apple-generic";
+			};
+			name = Debug;
+		};
+		C171087C297D522300D1F87F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				INFOPLIST_FILE = "dispatcher copy2-Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				OTHER_LDFLAGS = (
+					"$(inherited)",
+					"-ObjC",
+					"-lc++",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.$(PRODUCT_NAME:rfc1034identifier)";
+				"PRODUCT_BUNDLE_IDENTIFIER[sdk=iphoneos*]" = org.reactjs.native.dispatcher;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				VERSIONING_SYSTEM = "apple-generic";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -712,6 +1099,24 @@
 			buildConfigurations = (
 				83CBBA201A601CBA00E9B192 /* Debug */,
 				83CBBA211A601CBA00E9B192 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C1710865297D51D100D1F87F /* Build configuration list for PBXNativeTarget "dispatcher-Development" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C1710866297D51D100D1F87F /* Debug */,
+				C1710867297D51D100D1F87F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C171087A297D522300D1F87F /* Build configuration list for PBXNativeTarget "dispatcher-Staging" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C171087B297D522300D1F87F /* Debug */,
+				C171087C297D522300D1F87F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

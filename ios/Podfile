@@ -4,10 +4,20 @@ require_relative '../node_modules/@react-native-community/cli-platform-ios/nativ
 platform :ios, '12.4'
 install! 'cocoapods', :deterministic_uuids => false
 
+def shared_pods
+  config = use_native_modules!
+  use_react_native!(:path => config[:reactNativePath])
+  permission_path = '../node_modules/react-native-permissions/ios'
+
+  pod 'GoogleSignIn', '~> 5.0.2'
+  pod 'GoogleMaps'
+
+end
+
 target 'dispatcher' do
   config = use_native_modules!
   use_frameworks! :linkage => :static
-
+  shared_pods
   # Flags change depending on the env values.
   flags = get_default_flags()
 
@@ -26,6 +36,9 @@ target 'dispatcher' do
     # An absolute path to your application root.
     :app_path => "#{Pod::Config.instance.installation_root}/.."
   )
+  target 'dispatcher-Development' do
+    shared_pods
+  end
 
   target 'dispatcherTests' do
     inherit! :complete

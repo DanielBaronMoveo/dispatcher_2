@@ -1,0 +1,46 @@
+{
+  "project_info": {
+    "project_number": "503511224262",
+    "project_id": "dispatcher-prod-f27d7",
+    "storage_bucket": "dispatcher-prod-f27d7.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:503511224262:android:77318206cf9d006b7dacc7",
+        "android_client_info": {
+          "package_name": "com.dispatcher"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "503511224262-qf5e5aalvgginru15iv1ecahsc8g5dbc.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDQbSt2MXZadiPSvlwZkLho-UZS7COUWKM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "503511224262-qf5e5aalvgginru15iv1ecahsc8g5dbc.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "503511224262-rs2sdgdlkvmn8t2llrf4n3700hn9u4r2.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "org.reactjs.native.example.dispatcher"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
