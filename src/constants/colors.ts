@@ -6,6 +6,7 @@ const colors = {
   WHITE_BASE: '#F8F8FF',
   WHITE_MID: '#F3F3FF',
   WHITE_DARK: '#D9DBE9',
+  RED_BASE: '#FD5959',
 };
 
 export default colors;

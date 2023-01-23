@@ -1,12 +1,12 @@
-// import {View, Text} from 'react-native';
 import Svg, {Path, Rect} from 'react-native-svg';
 import React from 'react';
+import {StyleProp, ViewStyle} from 'react-native';
 
 interface Props {
   color?: string;
   width?: number;
   revealPass: boolean;
-  style?: any;
+  style?: StyleProp<ViewStyle>;
 }
 
 const PassIcon = ({revealPass, style}: Props) => {
