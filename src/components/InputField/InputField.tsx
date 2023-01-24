@@ -11,12 +11,12 @@ import colors from '../../constants/colors';
 import PassIcon from '../Icons/PassIcon';
 
 type InputFieldProps = {
-  type: 'email' | 'password';
+  type: 'email' | 'password' | 'rePassword';
   styleProps?: StyleProp<ViewStyle>;
   placeholder: string;
   value: string;
   isValid?: boolean;
-  onChangeText?: (text: string) => void;
+  onChangeText: (type: string, value: string) => void;
   validateInput: (type: string, value: string) => void;
 };
 
@@ -41,23 +41,31 @@ const InputField = ({
           autoCapitalize="none"
           autoCorrect={false}
           value={value}
-          onChangeText={onChangeText}
+          onChangeText={text => onChangeText('email', text)}
           onChange={() => validateInput('email', value)}
-          style={[styles.input, !isValid && {color: colors.RED_BASE}]}
+          style={[styles.input, isValid ? {} : {color: colors.RED_BASE}]}
         />
       </View>
     ) : (
       <>
         <View style={styles.innerContainer}>
           <TextInput
-            style={[styles.input, !isValid ? {color: colors.RED_BASE} : null]}
+            style={[styles.input, isValid ? {} : {color: colors.RED_BASE}]}
             placeholder={placeholder}
-            secureTextEntry={isRevealPass ? false : true}
+            secureTextEntry={!isRevealPass}
             autoCapitalize="none"
             autoCorrect={false}
             value={value}
-            onChangeText={onChangeText}
-            onChange={() => validateInput('password', value)}
+            onChangeText={text =>
+              type === 'password'
+                ? onChangeText('password', text)
+                : onChangeText('rePassword', text)
+            }
+            onChange={() =>
+              type === 'password'
+                ? validateInput('password', value)
+                : validateInput('rePassword', value)
+            }
           />
           <Pressable onPress={handleRevealPass}>
             <PassIcon style={styles.icon} revealPass={isRevealPass} />

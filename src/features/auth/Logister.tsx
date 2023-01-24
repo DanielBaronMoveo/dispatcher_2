@@ -4,6 +4,7 @@ import PrimaryButton from '../../components/Buttons/PrimaryButton';
 import InputField from '../../components/InputField/InputField';
 import colors from '../../constants/colors';
 import useToggle from '../../utils/useToggle';
+import {validateEmail, validatePassword} from '../../utils/validation';
 
 const Logister = () => {
   const [isSignup, setIsSignup] = useToggle(true);
@@ -24,36 +25,44 @@ const Logister = () => {
     return isSignup ? 'Signup' : 'Login';
   }, [isSignup]);
 
-  const primaryBtnText = useMemo(() => {
-    return isSignup ? 'Signup' : 'Login';
-  }, [isSignup]);
-
   const secondaryBtnText = useMemo(() => {
     return isSignup ? 'Login' : 'Signup';
   }, [isSignup]);
 
   const validateInput = (type: string, value: string) => {
-    if (type === 'email') {
-      const emailRegex = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
-      if (!value.match(emailRegex)) {
-        console.log('invalid email');
-        setEmail(prev => ({...prev, isValid: false}));
-      } else {
-        setEmail(prev => ({...prev, isValid: true}));
-      }
-    } else if (type === 'password') {
-      if (value.length < 7) {
-        console.log('invalid password');
-        setPassword(prev => ({...prev, isValid: false}));
-      } else {
-        setPassword(prev => ({...prev, isValid: true}));
-      }
+    switch (type) {
+      case 'email':
+        const isEmailValid = validateEmail(value);
+        if (!isEmailValid) {
+          setEmail(prev => ({...prev, isValid: false}));
+        } else {
+          setEmail(prev => ({...prev, isValid: true}));
+        }
+        break;
+      case 'password':
+        const isPasswordValid = validatePassword(value);
+        if (!isPasswordValid) {
+          setPassword(prev => ({...prev, isValid: false}));
+        } else {
+          setPassword(prev => ({...prev, isValid: true}));
+        }
+        break;
+      case 'rePassword':
+        if (value.length < 6 || value !== password.value) {
+          setRePassword(prev => ({...prev, isValid: false}));
+        } else {
+          setRePassword(prev => ({...prev, isValid: true}));
+        }
+        break;
+      default:
+        break;
     }
   };
 
   const handleTextChange = (type: string, value: string) => {
     if (type === 'email') {
       setEmail(prev => ({...prev, value}));
+      console.log('email', email);
     } else if (type === 'password') {
       setPassword(prev => ({...prev, value}));
     } else if (type === 'rePassword') {
@@ -61,8 +70,8 @@ const Logister = () => {
     }
   };
 
-  return (
-    <View style={styles.mainContainer}>
+  const renderFields = () => {
+    return (
       <View style={styles.inputsContainer}>
         <View style={styles.titleContainer}>
           <Text style={styles.title}>{title}</Text>
@@ -73,7 +82,7 @@ const Logister = () => {
             placeholder="Your email"
             value={email.value}
             isValid={email.isValid}
-            onChangeText={value => handleTextChange('email', value)}
+            onChangeText={handleTextChange}
             validateInput={validateInput}
             styleProps={!email.isValid ? styles.invalidInputBorder : null}
           />
@@ -88,7 +97,7 @@ const Logister = () => {
             type="password"
             placeholder="Password"
             value={password.value}
-            onChangeText={value => handleTextChange('password', value)}
+            onChangeText={handleTextChange}
             validateInput={validateInput}
             isValid={password.isValid}
             styleProps={!password.isValid ? styles.invalidInputBorder : null}
@@ -102,32 +111,50 @@ const Logister = () => {
         {isSignup && (
           <View style={styles.input}>
             <InputField
-              type="password"
+              type="rePassword"
               placeholder="Re-Enter Password"
               value={rePassword.value}
-              onChangeText={value => handleTextChange('rePassword', value)}
+              onChangeText={handleTextChange}
               validateInput={validateInput}
+              isValid={rePassword.isValid}
+              styleProps={
+                !rePassword.isValid ? styles.invalidInputBorder : null
+              }
             />
             {!rePassword.isValid && (
               <Text style={styles.errorText}>
-                One or more files is un validated
+                It looks like your passwords don't match!
               </Text>
             )}
           </View>
         )}
       </View>
+    );
+  };
+  const renderControls = () => {
+    return (
       <View style={styles.controlsContainer}>
         <PrimaryButton
           primary={true}
           onPress={() =>
             console.log(`${isSignup ? 'Signup' : 'Login'} Pressed!`)
           }
-          text={primaryBtnText}
+          text={title}
           icon={true}
           style={styles.primaryBtn}
         />
         <PrimaryButton text={secondaryBtnText} onPress={setIsSignup} />
       </View>
+    );
+  };
+
+  console.log('password', password);
+  console.log('rePassword', rePassword);
+
+  return (
+    <View style={styles.mainContainer}>
+      {renderFields()}
+      {renderControls()}
     </View>
   );
 };

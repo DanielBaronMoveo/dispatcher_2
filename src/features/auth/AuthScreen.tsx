@@ -4,7 +4,7 @@ import Logister from './Logister';
 import colors from '../../constants/colors';
 import DispatcherIcon from '../../components/Icons/DispatcherIcon';
 
-const LoginScreen = () => {
+const AuthScreen = () => {
   return (
     <ScrollView style={styles.root}>
       <KeyboardAvoidingView style={styles.root} behavior="position">
@@ -19,7 +19,7 @@ const LoginScreen = () => {
   );
 };
 
-export default LoginScreen;
+export default AuthScreen;
 
 const styles = StyleSheet.create({
   root: {
