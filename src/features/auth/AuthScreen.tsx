@@ -1,6 +1,6 @@
 import {StyleSheet, KeyboardAvoidingView, ScrollView, View} from 'react-native';
 import React from 'react';
-import Logister from './Logister';
+import Logister from './components/Logister';
 import colors from '../../constants/colors';
 import DispatcherIcon from '../../components/Icons/DispatcherIcon';
 

@@ -1,12 +1,17 @@
 import React, {useMemo, useState} from 'react';
 import {View, Text, StyleSheet} from 'react-native';
-import PrimaryButton from '../../components/Buttons/PrimaryButton';
-import InputField from '../../components/InputField/InputField';
-import colors from '../../constants/colors';
-import useToggle from '../../utils/useToggle';
-import {validateEmail, validatePassword} from '../../utils/validation';
+import PrimaryButton from '../../../components/Buttons/PrimaryButton';
+import InputField from '../../../components/InputField/InputField';
+import colors from '../../../constants/colors';
+import useToggle from '../../../utils/useToggle';
+import {validateEmail, validatePassword} from '../../../utils/validation';
+import {logister} from '../state/auth.actions';
+import {useDispatch} from 'react-redux';
+import {AppDispatch} from '../../../state/store';
 
 const Logister = () => {
+  const dispatch = useDispatch<AppDispatch>();
+
   const [isSignup, setIsSignup] = useToggle(true);
   const [email, setEmail] = useState({
     value: '',
@@ -29,6 +34,17 @@ const Logister = () => {
     return isSignup ? 'Login' : 'Signup';
   }, [isSignup]);
 
+  const handleSubmition = () => {
+    dispatch(
+      logister({
+        isSignup,
+        email: email.value,
+        password: password.value,
+        rePassword: rePassword.value,
+      }),
+    );
+  };
+
   const validateInput = (type: string, value: string) => {
     switch (type) {
       case 'email':
@@ -48,7 +64,7 @@ const Logister = () => {
         }
         break;
       case 'rePassword':
-        if (value.length < 6 || value !== password.value) {
+        if (value !== password.value) {
           setRePassword(prev => ({...prev, isValid: false}));
         } else {
           setRePassword(prev => ({...prev, isValid: true}));
@@ -136,9 +152,7 @@ const Logister = () => {
       <View style={styles.controlsContainer}>
         <PrimaryButton
           primary={true}
-          onPress={() =>
-            console.log(`${isSignup ? 'Signup' : 'Login'} Pressed!`)
-          }
+          onPress={handleSubmition}
           text={title}
           icon={true}
           style={styles.primaryBtn}
@@ -147,9 +161,6 @@ const Logister = () => {
       </View>
     );
   };
-
-  console.log('password', password);
-  console.log('rePassword', rePassword);
 
   return (
     <View style={styles.mainContainer}>
