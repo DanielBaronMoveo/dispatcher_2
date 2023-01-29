@@ -1,5 +1,5 @@
 import {createSlice} from '@reduxjs/toolkit';
-import {logister} from './auth.actions';
+import {logister, logout} from './auth.actions';
 import {FirebaseAuthTypes} from '@react-native-firebase/auth';
 
 type User = FirebaseAuthTypes.User | FirebaseAuthTypes.UserCredential | null;
@@ -27,6 +27,9 @@ const authSlice = createSlice({
         return;
       }
       state.user = action.payload;
+    });
+    builder.addCase(logout.fulfilled, state => {
+      state.user = null;
     });
   },
 });

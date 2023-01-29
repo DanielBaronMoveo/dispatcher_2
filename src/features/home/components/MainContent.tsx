@@ -5,6 +5,7 @@ import BaseText from '../../../components/Text/BaseText';
 import {articleApi} from '../../../api/article.api';
 import ArticleCard from './ArticleCard';
 import auth from '@react-native-firebase/auth';
+import {formatService} from '../../../utils/formatters';
 
 const MainContent = () => {
   const user = auth().currentUser;
@@ -14,13 +15,12 @@ const MainContent = () => {
     isLoading,
   } = articleApi.useGetTopHeadlinesArticlesInCountryQuery('us');
   const lastSignInTime = user?.metadata.lastSignInTime;
-  const formattedDate = new Date(lastSignInTime!).toLocaleDateString('en-US');
-  const formattedTime = new Date(lastSignInTime!).toLocaleTimeString('en-US', {
+  const formattedDate = formatService.getFormattedDate(lastSignInTime!);
+  const formattedTime = formatService.getFormattedTime(lastSignInTime!, {
     hour: 'numeric',
     minute: 'numeric',
     hour12: true,
   });
-
   const renderItem = ({item}: any) => (
     <ArticleCard
       style={styles.card}

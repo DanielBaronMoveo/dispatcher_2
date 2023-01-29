@@ -1,6 +1,7 @@
 import {createAsyncThunk} from '@reduxjs/toolkit';
 import {showMessage} from 'react-native-flash-message';
 import auth from '@react-native-firebase/auth';
+import {errorHandlingService} from '../../../utils/errorHandling';
 
 export const logister = createAsyncThunk(
   'auth/logister',
@@ -18,6 +19,10 @@ export const logister = createAsyncThunk(
           password.length === 0 ||
           rePassword.length === 0
         ) {
+          showMessage({
+            message: 'Please fill all fields!',
+            type: 'danger',
+          });
           return null;
         }
         if (password !== rePassword) {
@@ -48,130 +53,20 @@ export const logister = createAsyncThunk(
         return user;
       }
     } catch (error: any) {
-      if (error.code === 'auth/email-already-in-use') {
-        console.log('That email address is already in use!');
-        showMessage({
-          message: 'That email address is already in use!',
-          type: 'danger',
-        });
-      }
-
-      if (error.code === 'auth/invalid-email') {
-        console.log('That email address is invalid!');
-        showMessage({
-          message: 'That email address is invalid!',
-          description: 'That email address is invalid!',
-          type: 'danger',
-        });
-      }
-
-      if (error.code === 'auth/user-not-found') {
-        console.log('User not found!');
-        showMessage({
-          message: 'User not found!',
-          type: 'danger',
-        });
-      }
-
-      if (error.code === 'auth/wrong-password') {
-        console.log('Wrong password!');
-        showMessage({
-          message: 'Wrong password!',
-          type: 'danger',
-        });
-      }
+      errorHandlingService.errorMessage(error);
     }
   },
 );
 
-const onSubmition = (
-  isSignUp: boolean,
-  email: string,
-  password: string,
-  rePassword: string,
-) => {
-  if (isSignUp) {
-    if (
-      email.length === 0 ||
-      password.length === 0 ||
-      rePassword.length === 0
-    ) {
-      return;
-    }
-    auth()
-      .createUserWithEmailAndPassword(email, password)
-      .then(() => {
-        console.log('User account created & signed in!');
-        showMessage({
-          message: 'User account created & signed in!',
-          type: 'success',
-        });
-      })
-      .catch(error => {
-        if (error.code === 'auth/email-already-in-use') {
-          console.log('That email address is already in use!');
-          showMessage({
-            message: 'That email address is already in use!',
-            type: 'danger',
-          });
-        }
-
-        if (error.code === 'auth/invalid-email') {
-          console.log('That email address is invalid!');
-          showMessage({
-            message: 'That email address is invalid!',
-            description: 'That email address is invalid!',
-            type: 'danger',
-          });
-        }
-
-        console.error(error);
-      });
-  } else {
-    if (email.length === 0 || password.length === 0) {
-      return;
-    }
-    auth()
-      .signInWithEmailAndPassword(email, password)
-      .then(() => {
-        console.log('User account signed in!');
-        showMessage({
-          message: 'User account signed in!',
-          type: 'success',
-        });
-      })
-      .catch(error => {
-        if (error.code === 'auth/invalid-email') {
-          console.log('That email address is invalid!');
-          showMessage({
-            message: 'That email address is invalid!',
-            description: 'That email address is invalid!',
-            type: 'danger',
-          });
-        }
-
-        if (error.code === 'auth/user-not-found') {
-          console.log('User not found!');
-          showMessage({
-            message: 'User not found!',
-            type: 'danger',
-          });
-        }
-
-        if (error.code === 'auth/wrong-password') {
-          console.log('Wrong password!');
-          showMessage({
-            message: 'Wrong password!',
-            description: 'It looks like you entered the wrong password!',
-            type: 'danger',
-          });
-        }
-
-        console.error(error);
-      });
+export const logout = createAsyncThunk('auth/logout', async () => {
+  try {
+    await auth().signOut();
+    showMessage({
+      message: 'User logged out successfully!',
+      type: 'success',
+    });
+    return null;
+  } catch (error: any) {
+    errorHandlingService.errorMessage(error);
   }
-};
-
-export const authActions = {
-  onSubmition,
-};
+});
