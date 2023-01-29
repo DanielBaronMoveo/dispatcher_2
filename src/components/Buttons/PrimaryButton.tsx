@@ -1,4 +1,11 @@
-import {View, Text, Pressable, StyleSheet} from 'react-native';
+import {
+  View,
+  Text,
+  Pressable,
+  StyleSheet,
+  StyleProp,
+  ViewStyle,
+} from 'react-native';
 import React from 'react';
 import colors from '../../constants/colors';
 import Arrow from '../Icons/Arrow';
@@ -8,7 +15,7 @@ interface PrimaryButtonProps {
   onPress: () => void;
   primary?: boolean;
   icon?: boolean;
-  style?: any;
+  style?: StyleProp<ViewStyle>;
 }
 
 const PrimaryButton = ({

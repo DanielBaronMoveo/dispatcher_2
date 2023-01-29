@@ -1,9 +1,9 @@
 import React from 'react';
-import {StyleSheet} from 'react-native';
+import {StyleProp, StyleSheet, ViewStyle} from 'react-native';
 import {Path, Svg} from 'react-native-svg';
 
 interface Props {
-  style?: any;
+  style?: StyleProp<ViewStyle>;
 }
 
 const Arrow = ({style}: Props) => {
