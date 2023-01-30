@@ -10,6 +10,7 @@ import React from 'react';
 import colors from '../../../constants/colors';
 import PrimaryButton from '../../../components/Buttons/PrimaryButton';
 import FavouriteCircle from '../../../components/Icons/FavouriteCircle';
+import {formatService} from '../../../utils/formatters';
 import {navigate} from '../../../navigation/RootNavigation';
 import {HomeStackScreens} from '../../../constants/screens';
 
@@ -30,34 +31,29 @@ const ArticleCard = ({
   author,
   description,
 }: ArticleCardProps) => {
-  const formattedDate = new Date(publishedAt).toLocaleDateString('en-US', {
+  const formattedDate = formatService.getFormattedDate(publishedAt, {
     year: 'numeric',
     month: 'short',
     day: 'numeric',
     weekday: 'long',
   });
-
-  return (
-    <View style={[styles.cardContainer, style]}>
+  const renderImage = () => {
+    return (
       <View style={styles.imageContainer}>
         <Image source={{uri: urlToImage}} style={styles.image} />
         <View style={styles.favIcon}>
           <FavouriteCircle width={30} height={30} />
         </View>
       </View>
+    );
+  };
+  const renderCardContent = () => {
+    return (
       <View style={styles.cardContent}>
-        <View style={styles.publishedContainer}>
-          <Text style={styles.publishedText}>{formattedDate}</Text>
-        </View>
-        <View style={styles.articleTitleContainer}>
-          <Text style={styles.articleTitle}>{title}</Text>
-        </View>
-        <View style={styles.authorContainer}>
-          <Text style={styles.authorText}>{author ? author : 'Unknown'}</Text>
-        </View>
-        <View style={styles.describtionContainer}>
-          <Text style={styles.descriptionText}>{description}..</Text>
-        </View>
+        <Text style={styles.publishedText}>{formattedDate}</Text>
+        <Text style={styles.articleTitle}>{title}</Text>
+        <Text style={styles.authorText}>{author ? author : 'Unknown'}</Text>
+        <Text style={styles.descriptionText}>{description}..</Text>
         <View style={styles.buttonContainer}>
           <PrimaryButton
             text="NAVIAGTE TO DISPATCH"
@@ -68,6 +64,12 @@ const ArticleCard = ({
           />
         </View>
       </View>
+    );
+  };
+  return (
+    <View style={[styles.cardContainer, style]}>
+      {renderImage()}
+      {renderCardContent()}
     </View>
   );
 };
@@ -113,18 +115,12 @@ const styles = StyleSheet.create({
   cardContent: {
     flex: 1,
     paddingHorizontal: 16,
-    justifyContent: 'space-between',
   },
   publishedText: {
     fontSize: 14,
     lineHeight: 22,
     fontWeight: '400',
     color: colors.BLUE_MID,
-  },
-  publishedContainer: {
-    paddingVertical: 10,
-  },
-  authorContainer: {
     paddingVertical: 10,
   },
   authorText: {
@@ -132,20 +128,14 @@ const styles = StyleSheet.create({
     lineHeight: 22,
     fontWeight: '400',
     color: colors.BLUE_MID,
-  },
-  articleTitleContainer: {
-    width: '100%',
-    // height: 70,
+    paddingBottom: 10,
   },
   articleTitle: {
     fontSize: 18,
     fontWeight: '700',
-    lineHeight: 21,
+    lineHeight: 20,
     color: colors.BLUE_DARK,
-  },
-  describtionContainer: {
-    width: 311,
-    height: 96,
+    paddingBottom: 10,
   },
   descriptionText: {
     fontSize: 14,
@@ -154,6 +144,7 @@ const styles = StyleSheet.create({
     color: colors.BLUE_DARK,
   },
   buttonContainer: {
+    flex: 1,
     width: '100%',
     paddingBottom: 16,
   },

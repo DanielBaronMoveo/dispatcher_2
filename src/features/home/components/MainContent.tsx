@@ -11,6 +11,11 @@ import BaseText from '../../../components/Text/BaseText';
 import {articleApi} from '../../../api/article.api';
 import ArticleCard from './ArticleCard';
 import auth from '@react-native-firebase/auth';
+import {formatService} from '../../../utils/formatters';
+import {
+  LAST_LOGIN,
+  TOP_HEADLINES_IN_ISRAEL,
+} from '../../../constants/constants';
 
 const MainContent = () => {
   const user = auth().currentUser;
@@ -20,13 +25,13 @@ const MainContent = () => {
     isLoading,
   } = articleApi.useGetTopHeadlinesArticlesInCountryQuery('us');
   const lastSignInTime = user?.metadata.lastSignInTime;
-  const formattedDate = new Date(lastSignInTime!).toLocaleDateString('en-US');
-  const formattedTime = new Date(lastSignInTime!).toLocaleTimeString('en-US', {
+  const formattedDate = formatService.getFormattedDate(lastSignInTime!);
+  const formattedTime = formatService.getFormattedTime(lastSignInTime!, {
     hour: 'numeric',
     minute: 'numeric',
     hour12: true,
   });
-
+  const lastLoginText = `${LAST_LOGIN} ${formattedTime}, ${formattedDate}`;
   const renderItem = ({item}: any) => (
     <ArticleCard
       style={styles.card}
@@ -40,10 +45,8 @@ const MainContent = () => {
 
   const renderHeaderList = () => (
     <>
-      <Text style={styles.lastLoginText}>
-        Last Login: {formattedTime}, {formattedDate}
-      </Text>
-      <BaseText style={styles.mainHeader}>Top Headlines in Israel</BaseText>
+      <Text style={styles.lastLoginText}>{lastLoginText}</Text>
+      <BaseText style={styles.mainHeader}>{TOP_HEADLINES_IN_ISRAEL}</BaseText>
     </>
   );
 
@@ -61,15 +64,11 @@ const MainContent = () => {
 
   return (
     <View style={styles.main}>
-      <View style={styles.mainContentContainer}>
-        <View style={styles.content}>
-          <FlatList
-            ListHeaderComponent={renderHeaderList}
-            data={articles?.articles}
-            renderItem={({item}) => renderItem({item})}
-          />
-        </View>
-      </View>
+      <FlatList
+        ListHeaderComponent={renderHeaderList}
+        data={articles?.articles}
+        renderItem={({item}) => renderItem({item})}
+      />
     </View>
   );
 };
@@ -82,6 +81,8 @@ const styles = StyleSheet.create({
     width: '100%',
     backgroundColor: '#E5E5E5',
     paddingHorizontal: 16,
+    justifyContent: 'center',
+    alignItems: 'center',
   },
   loader: {
     flex: 1,
@@ -96,20 +97,10 @@ const styles = StyleSheet.create({
     color: colors.BLUE_MID,
     paddingTop: 5,
   },
-  mainContentContainer: {
-    flex: 1,
-    paddingTop: 12,
-    justifyContent: 'flex-start',
-  },
   mainHeader: {
     fontSize: 24,
     lineHeight: 32,
     color: colors.BLUE_DARK,
-  },
-  content: {
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
   },
   card: {
     marginVertical: 10,

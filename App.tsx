@@ -2,6 +2,7 @@ import React, {useEffect, useState} from 'react';
 import {StatusBar} from 'react-native';
 import {StyleSheet} from 'react-native';
 import {SafeAreaProvider} from 'react-native-safe-area-context';
+import AuthScreen from './src/features/auth/AuthScreen';
 
 import auth, {FirebaseAuthTypes} from '@react-native-firebase/auth';
 import FlashMessage from 'react-native-flash-message';
@@ -12,11 +13,10 @@ import AppNavigation from './src/navigation/AppNavigation';
 const App = () => {
   const [initializing, setInitializing] = useState(true);
   const [user, setUser] = useState<FirebaseAuthTypes.User | null>();
-
-  function onAuthStateChanged(enteredUser: FirebaseAuthTypes.User | null) {
+  const onAuthStateChanged = (enteredUser: FirebaseAuthTypes.User | null) => {
     setUser(enteredUser);
     if (initializing) setInitializing(false);
-  }
+  };
 
   useEffect(() => {
     const subscriber = auth().onAuthStateChanged(onAuthStateChanged);
