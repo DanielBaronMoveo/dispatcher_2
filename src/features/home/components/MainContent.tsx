@@ -6,6 +6,10 @@ import {articleApi} from '../../../api/article.api';
 import ArticleCard from './ArticleCard';
 import auth from '@react-native-firebase/auth';
 import {formatService} from '../../../utils/formatters';
+import {
+  LAST_LOGIN,
+  TOP_HEADLINES_IN_ISRAEL,
+} from '../../../constants/constants';
 
 const MainContent = () => {
   const user = auth().currentUser;
@@ -21,6 +25,7 @@ const MainContent = () => {
     minute: 'numeric',
     hour12: true,
   });
+  const lastLoginText = `${LAST_LOGIN} ${formattedTime}, ${formattedDate}`;
   const renderItem = ({item}: any) => (
     <ArticleCard
       style={styles.card}
@@ -34,10 +39,8 @@ const MainContent = () => {
 
   const renderHeaderList = () => (
     <>
-      <Text style={styles.lastLoginText}>
-        Last Login: {formattedTime}, {formattedDate}
-      </Text>
-      <BaseText style={styles.mainHeader}>Top Headlines in Israel</BaseText>
+      <Text style={styles.lastLoginText}>{lastLoginText}</Text>
+      <BaseText style={styles.mainHeader}>{TOP_HEADLINES_IN_ISRAEL}</BaseText>
     </>
   );
 
