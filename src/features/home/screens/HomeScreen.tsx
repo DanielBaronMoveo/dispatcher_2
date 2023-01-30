@@ -3,7 +3,7 @@ import React from 'react';
 import {SafeAreaView} from 'react-native-safe-area-context';
 import Navbar from '../components/Navbar';
 import Filterbar from '../components/Filterbar';
-import Tabbar from '../components/Tabbar';
+// import Tabbar from '../components/Tabbar';
 import MainContent from '../components/MainContent';
 import colors from '../../../constants/colors';
 
@@ -13,7 +13,7 @@ const HomeScreen = () => {
       <Navbar />
       <Filterbar />
       <MainContent />
-      <Tabbar />
+      {/* <Tabbar /> */}
     </SafeAreaView>
   );
 };

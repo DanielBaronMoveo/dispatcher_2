@@ -1,6 +1,8 @@
 import {createAsyncThunk} from '@reduxjs/toolkit';
 import {showMessage} from 'react-native-flash-message';
 import auth from '@react-native-firebase/auth';
+import {resetTo} from '../../../navigation/RootNavigation';
+import {Screens} from '../../../constants/screens';
 
 export const logister = createAsyncThunk(
   'auth/logister',
@@ -35,7 +37,9 @@ export const logister = createAsyncThunk(
           message: 'User created successfully!',
           type: 'success',
         });
-        return user;
+        resetTo(Screens.TabScreens);
+
+        return user.user;
       } else {
         if (email.length === 0 || password.length === 0) {
           return null;
@@ -45,7 +49,9 @@ export const logister = createAsyncThunk(
           message: 'User logged in successfully!',
           type: 'success',
         });
-        return user;
+        resetTo(Screens.TabScreens);
+
+        return user.user;
       }
     } catch (error: any) {
       if (error.code === 'auth/email-already-in-use') {

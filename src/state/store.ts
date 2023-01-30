@@ -11,7 +11,9 @@ const rootReducer = combineReducers({
 export const store = configureStore({
   reducer: rootReducer,
   middleware: getDefaultMiddleware =>
-    getDefaultMiddleware().concat(articleApi.middleware),
+    getDefaultMiddleware({
+      serializableCheck: false,
+    }).concat(articleApi.middleware),
 });
 
 // optional, but required for refetchOnFocus/refetchOnReconnect behaviors

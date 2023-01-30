@@ -1,4 +1,10 @@
-import {View, Text, StyleSheet, FlatList} from 'react-native';
+import {
+  View,
+  Text,
+  StyleSheet,
+  FlatList,
+  ActivityIndicator,
+} from 'react-native';
 import React from 'react';
 import colors from '../../../constants/colors';
 import BaseText from '../../../components/Text/BaseText';
@@ -42,7 +48,11 @@ const MainContent = () => {
   );
 
   if (isLoading) {
-    return <Text>Loading...</Text>;
+    return (
+      <View style={styles.loader}>
+        <ActivityIndicator size="large" color={colors.BLUE_DARK} />
+      </View>
+    );
   }
 
   if (error) {
@@ -72,6 +82,12 @@ const styles = StyleSheet.create({
     width: '100%',
     backgroundColor: '#E5E5E5',
     paddingHorizontal: 16,
+  },
+  loader: {
+    flex: 1,
+    backgroundColor: '#E5E5E5',
+    justifyContent: 'center',
+    alignItems: 'center',
   },
   lastLoginText: {
     fontSize: 12,

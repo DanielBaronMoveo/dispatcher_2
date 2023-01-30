@@ -10,6 +10,8 @@ import React from 'react';
 import colors from '../../../constants/colors';
 import PrimaryButton from '../../../components/Buttons/PrimaryButton';
 import FavouriteCircle from '../../../components/Icons/FavouriteCircle';
+import {navigate} from '../../../navigation/RootNavigation';
+import {HomeStackScreens} from '../../../constants/screens';
 
 interface ArticleCardProps {
   style?: StyleProp<ViewStyle>;
@@ -61,7 +63,7 @@ const ArticleCard = ({
             text="NAVIAGTE TO DISPATCH"
             icon={true}
             primary={true}
-            onPress={() => console.log('navigate to dispatch')}
+            onPress={() => navigate(HomeStackScreens.DetailedArticleScreen)}
             style={styles.button}
           />
         </View>

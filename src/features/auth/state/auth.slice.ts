@@ -2,7 +2,7 @@ import {createSlice} from '@reduxjs/toolkit';
 import {logister} from './auth.actions';
 import {FirebaseAuthTypes} from '@react-native-firebase/auth';
 
-type User = FirebaseAuthTypes.User | FirebaseAuthTypes.UserCredential | null;
+type User = FirebaseAuthTypes.User | null;
 
 interface initialStateI {
   user: User;
