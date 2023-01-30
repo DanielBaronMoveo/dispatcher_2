@@ -54,15 +54,11 @@ const MainContent = () => {
 
   return (
     <View style={styles.main}>
-      <View style={styles.mainContentContainer}>
-        <View style={styles.content}>
-          <FlatList
-            ListHeaderComponent={renderHeaderList}
-            data={articles?.articles}
-            renderItem={({item}) => renderItem({item})}
-          />
-        </View>
-      </View>
+      <FlatList
+        ListHeaderComponent={renderHeaderList}
+        data={articles?.articles}
+        renderItem={({item}) => renderItem({item})}
+      />
     </View>
   );
 };
@@ -75,6 +71,8 @@ const styles = StyleSheet.create({
     width: '100%',
     backgroundColor: '#E5E5E5',
     paddingHorizontal: 16,
+    justifyContent: 'center',
+    alignItems: 'center',
   },
   lastLoginText: {
     fontSize: 12,
@@ -83,20 +81,10 @@ const styles = StyleSheet.create({
     color: colors.BLUE_MID,
     paddingTop: 5,
   },
-  mainContentContainer: {
-    flex: 1,
-    paddingTop: 12,
-    justifyContent: 'flex-start',
-  },
   mainHeader: {
     fontSize: 24,
     lineHeight: 32,
     color: colors.BLUE_DARK,
-  },
-  content: {
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
   },
   card: {
     marginVertical: 10,
