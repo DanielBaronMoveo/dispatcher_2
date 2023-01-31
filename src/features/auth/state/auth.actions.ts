@@ -64,6 +64,7 @@ export const logout = createAsyncThunk('auth/logout', async () => {
       'User logged out successfully!',
       types.SUCCESS,
     );
+    resetTo(Screens.AuthScreen);
     return null;
   } catch (error: any) {
     errorHandlingService.errorMessage(error);

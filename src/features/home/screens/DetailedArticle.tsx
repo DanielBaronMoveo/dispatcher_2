@@ -3,7 +3,7 @@ import React from 'react';
 import colors from '../../../constants/colors';
 import {formatService} from '../../../utils/formatters';
 import {loremIpsum} from '../../../utils/utils';
-import ArticleCategory from '../../auth/components/ArticleCategory';
+import ArticleCategory from '../components/ArticleCategory';
 import ArticleImage from '../components/ArticleImage';
 
 interface DetailedArticleProps {

@@ -5,10 +5,8 @@ import colors from '../../../constants/colors';
 const ArticleCategory = () => {
   return (
     <View style={styles.categoryContainer}>
-      <View style={[styles.catView]}>
-        <Text style={styles.categoryText}>General</Text>
-      </View>
       <View style={styles.catView}>
+        <Text style={styles.categoryText}>General</Text>
         <Text style={styles.categoryText}>+3</Text>
       </View>
     </View>
@@ -21,21 +19,23 @@ const styles = StyleSheet.create({
   categoryText: {
     fontSize: 12,
     lineHeight: 14,
-    height: 14,
-    color: colors.BLUE_MID,
-  },
-  categoryContainer: {
-    minWidth: '30%',
-    flexDirection: 'row',
-  },
-  catView: {
-    backgroundColor: colors.WHITE_DARK,
-    borderRadius: 10,
     height: 20,
+    color: colors.BLUE_MID,
     justifyContent: 'center',
     alignItems: 'center',
     paddingHorizontal: 10,
     paddingVertical: 3,
     marginHorizontal: 5,
+    backgroundColor: colors.WHITE_DARK,
+    borderWidth: 1,
+    overflow: 'hidden',
+    borderColor: 'transparent',
+    borderRadius: 10,
+  },
+  categoryContainer: {
+    minWidth: '30%',
+  },
+  catView: {
+    flexDirection: 'row',
   },
 });

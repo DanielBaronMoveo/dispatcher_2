@@ -6,7 +6,7 @@ import {formatService} from '../../../utils/formatters';
 import {navigate} from '../../../navigation/RootNavigation';
 import {HomeStackScreens} from '../../../constants/screens';
 import {SelectedArticle} from '../../../models/article';
-import ArticleCategory from '../../auth/components/ArticleCategory';
+import ArticleCategory from './ArticleCategory';
 import ArticleImage from './ArticleImage';
 
 interface ArticleCardProps {
