@@ -3,13 +3,14 @@ import React from 'react';
 import {SafeAreaView} from 'react-native-safe-area-context';
 import colors from '../../../constants/colors';
 import Navbar from '../../home/components/Navbar';
+import {SAVED_ARTICLES} from '../../../constants/constants';
 
 const FavouriteScreen = () => {
   return (
     <SafeAreaView style={styles.root}>
       <Navbar />
       <View style={styles.favouriteContainer}>
-        <Text style={styles.favouriteText}>Saved articles</Text>
+        <Text style={styles.favouriteText}>{SAVED_ARTICLES}</Text>
       </View>
     </SafeAreaView>
   );
