@@ -78,7 +78,6 @@ const Logister = () => {
   const handleTextChange = (type: string, value: string) => {
     if (type === 'email') {
       setEmail(prev => ({...prev, value}));
-      console.log('email', email);
     } else if (type === 'password') {
       setPassword(prev => ({...prev, value}));
     } else if (type === 'rePassword') {

@@ -1,38 +1,18 @@
-import {View, Text, StyleSheet, StyleProp, ViewStyle} from 'react-native';
+import {View, Text, StyleSheet, ScrollView, Image} from 'react-native';
 import React from 'react';
 import colors from '../../../constants/colors';
-import PrimaryButton from '../../../components/Buttons/PrimaryButton';
 import {formatService} from '../../../utils/formatters';
-import {navigate} from '../../../navigation/RootNavigation';
-import {HomeStackScreens} from '../../../constants/screens';
-import {SelectedArticle} from '../../../models/article';
-import ArticleCategory from './ArticleCategory';
-import ArticleImage from './ArticleImage';
+import {loremIpsum} from '../../../utils/utils';
+import ArticleCategory from '../components/ArticleCategory';
+import ArticleImage from '../components/ArticleImage';
 
-interface ArticleCardProps {
-  style?: StyleProp<ViewStyle>;
-  urlToImage: string;
-  publishedAt: string;
-  title: string;
-  author: string | null;
-  description: string;
+interface DetailedArticleProps {
+  route: any;
 }
 
-const ArticleCard = ({
-  style,
-  urlToImage,
-  publishedAt,
-  title,
-  author,
-  description,
-}: ArticleCardProps) => {
-  const selectedArticle: SelectedArticle = {
-    urlToImage,
-    publishedAt,
-    title,
-    author,
-    description,
-  };
+const DetailedArticle = ({route}: DetailedArticleProps) => {
+  const {urlToImage, publishedAt, title, author, description} =
+    route?.params?.selectedArticle;
   const formattedDate = formatService.getFormattedDate(publishedAt, {
     year: 'numeric',
     month: 'short',
@@ -40,8 +20,9 @@ const ArticleCard = ({
     weekday: 'long',
   });
   const renderImage = () => {
-    return <ArticleImage urlToImage={urlToImage} style={styles.image} />;
+    return <ArticleImage urlToImage={urlToImage} />;
   };
+
   const renderCardContent = () => {
     return (
       <View style={styles.cardContent}>
@@ -51,40 +32,30 @@ const ArticleCard = ({
         </View>
         <Text style={styles.articleTitle}>{title}</Text>
         <Text style={styles.authorText}>{author ? author : 'Unknown'}</Text>
-        <Text numberOfLines={5} style={styles.descriptionText}>
-          {description}..
-        </Text>
-        <View style={styles.buttonContainer}>
-          <PrimaryButton
-            text="NAVIAGTE TO DISPATCH"
-            icon={true}
-            primary={true}
-            onPress={() =>
-              navigate(HomeStackScreens.DetailedArticleScreen, {
-                selectedArticle,
-              })
-            }
-            style={styles.button}
-          />
+        <Text style={styles.descriptionText}>{description}..</Text>
+        <Text style={styles.lorem}>{loremIpsum(893)}</Text>
+        <View style={styles.mainCardImage}>
+          <Image source={{uri: urlToImage}} style={styles.image} />
         </View>
+        <Text style={styles.lorem}>{loremIpsum(895)}</Text>
       </View>
     );
   };
   return (
-    <View style={[styles.cardContainer, style]}>
+    <ScrollView>
       {renderImage()}
       {renderCardContent()}
-    </View>
+    </ScrollView>
   );
 };
 
-export default ArticleCard;
+export default DetailedArticle;
 
 const styles = StyleSheet.create({
   cardContainer: {
     width: '100%',
     height: 449,
-    backgroundColor: colors.WHITE_BASE,
+    backgroundColor: colors.CLEAN_WHITE,
     borderWidth: 1,
     borderColor: '#d9dbe9',
     borderRadius: 20,
@@ -107,8 +78,6 @@ const styles = StyleSheet.create({
   image: {
     width: '100%',
     height: '100%',
-    borderTopRightRadius: 20,
-    borderTopLeftRadius: 20,
   },
   favIcon: {
     position: 'absolute',
@@ -152,13 +121,15 @@ const styles = StyleSheet.create({
     fontWeight: '400',
     color: colors.BLUE_DARK,
   },
-  buttonContainer: {
-    flex: 1,
+  mainCardImage: {
+    height: 204,
     width: '100%',
-    paddingBottom: 16,
   },
-  button: {
-    position: 'absolute',
-    bottom: 16,
+  lorem: {
+    fontSize: 14,
+    lineHeight: 16,
+    fontWeight: '400',
+    color: colors.BLUE_DARK,
+    paddingVertical: 10,
   },
 });

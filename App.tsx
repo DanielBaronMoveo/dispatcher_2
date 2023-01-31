@@ -2,13 +2,12 @@ import React, {useEffect, useState} from 'react';
 import {StatusBar} from 'react-native';
 import {StyleSheet} from 'react-native';
 import {SafeAreaProvider} from 'react-native-safe-area-context';
-import AuthScreen from './src/features/auth/AuthScreen';
 
 import auth, {FirebaseAuthTypes} from '@react-native-firebase/auth';
 import FlashMessage from 'react-native-flash-message';
 import {Provider} from 'react-redux';
 import {store} from './src/state/store';
-import HomeScreen from './src/features/home/screens/HomeScreen';
+import AppNavigation from './src/navigation/AppNavigation';
 
 const App = () => {
   const [initializing, setInitializing] = useState(true);
@@ -33,7 +32,7 @@ const App = () => {
       <StatusBar barStyle="light-content" />
       <SafeAreaProvider style={styles.root}>
         <Provider store={store}>
-          {!user ? <AuthScreen /> : <HomeScreen />}
+          <AppNavigation />
           <FlashMessage position="top" />
         </Provider>
       </SafeAreaProvider>
