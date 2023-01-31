@@ -5,6 +5,8 @@ import {
   errorHandlingService,
 } from '../../../utils/errorHandling';
 import {authErrors, types} from '../../../constants/authErrors';
+import {Screens} from '../../../constants/screens';
+import {resetTo} from '../../../navigation/RootNavigation';
 
 export const logister = createAsyncThunk(
   'auth/logister',
@@ -35,7 +37,8 @@ export const logister = createAsyncThunk(
           'User created successfully!',
           types.SUCCESS,
         );
-        return user;
+        resetTo(Screens.TabScreens);
+        return user.user;
       } else {
         if (email.length === 0 || password.length === 0) {
           throw new ErrorExeption(authErrors.EMPTY_FIELDS);
@@ -45,7 +48,8 @@ export const logister = createAsyncThunk(
           'User logged in successfully!',
           types.SUCCESS,
         );
-        return user;
+        resetTo(Screens.TabScreens);
+        return user.user;
       }
     } catch (error: any) {
       errorHandlingService.errorMessage(error);

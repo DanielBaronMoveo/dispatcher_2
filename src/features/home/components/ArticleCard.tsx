@@ -1,18 +1,13 @@
-import {
-  View,
-  Text,
-  Image,
-  StyleSheet,
-  StyleProp,
-  ViewStyle,
-} from 'react-native';
+import {View, Text, StyleSheet, StyleProp, ViewStyle} from 'react-native';
 import React from 'react';
 import colors from '../../../constants/colors';
 import PrimaryButton from '../../../components/Buttons/PrimaryButton';
-import FavouriteCircle from '../../../components/Icons/FavouriteCircle';
 import {formatService} from '../../../utils/formatters';
 import {navigate} from '../../../navigation/RootNavigation';
 import {HomeStackScreens} from '../../../constants/screens';
+import {SelectedArticle} from '../../../models/article';
+import ArticleCategory from '../../auth/components/ArticleCategory';
+import ArticleImage from './ArticleImage';
 
 interface ArticleCardProps {
   style?: StyleProp<ViewStyle>;
@@ -31,6 +26,13 @@ const ArticleCard = ({
   author,
   description,
 }: ArticleCardProps) => {
+  const selectedArticle: SelectedArticle = {
+    urlToImage,
+    publishedAt,
+    title,
+    author,
+    description,
+  };
   const formattedDate = formatService.getFormattedDate(publishedAt, {
     year: 'numeric',
     month: 'short',
@@ -38,28 +40,30 @@ const ArticleCard = ({
     weekday: 'long',
   });
   const renderImage = () => {
-    return (
-      <View style={styles.imageContainer}>
-        <Image source={{uri: urlToImage}} style={styles.image} />
-        <View style={styles.favIcon}>
-          <FavouriteCircle width={30} height={30} />
-        </View>
-      </View>
-    );
+    return <ArticleImage urlToImage={urlToImage} style={styles.image} />;
   };
   const renderCardContent = () => {
     return (
       <View style={styles.cardContent}>
-        <Text style={styles.publishedText}>{formattedDate}</Text>
+        <View style={styles.publishedContainer}>
+          <Text style={styles.publishedText}>{formattedDate}</Text>
+          <ArticleCategory />
+        </View>
         <Text style={styles.articleTitle}>{title}</Text>
         <Text style={styles.authorText}>{author ? author : 'Unknown'}</Text>
-        <Text style={styles.descriptionText}>{description}..</Text>
+        <Text numberOfLines={5} style={styles.descriptionText}>
+          {description}..
+        </Text>
         <View style={styles.buttonContainer}>
           <PrimaryButton
             text="NAVIAGTE TO DISPATCH"
             icon={true}
             primary={true}
-            onPress={() => navigate(HomeStackScreens.DetailedArticleScreen)}
+            onPress={() =>
+              navigate(HomeStackScreens.DetailedArticleScreen, {
+                selectedArticle,
+              })
+            }
             style={styles.button}
           />
         </View>
@@ -115,6 +119,11 @@ const styles = StyleSheet.create({
   cardContent: {
     flex: 1,
     paddingHorizontal: 16,
+  },
+  publishedContainer: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    alignItems: 'center',
   },
   publishedText: {
     fontSize: 14,

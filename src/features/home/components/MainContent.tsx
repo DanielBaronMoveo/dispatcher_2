@@ -96,6 +96,7 @@ const styles = StyleSheet.create({
     fontWeight: '500',
     color: colors.BLUE_MID,
     paddingTop: 5,
+    paddingBottom: 12,
   },
   mainHeader: {
     fontSize: 24,

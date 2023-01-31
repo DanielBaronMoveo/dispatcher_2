@@ -17,3 +17,11 @@ export interface Article {
     },
   ];
 }
+
+export interface SelectedArticle {
+  urlToImage: string;
+  publishedAt: string;
+  title: string;
+  author: string | null;
+  description: string;
+}

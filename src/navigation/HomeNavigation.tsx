@@ -3,7 +3,8 @@ import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import {HomeStackScreens} from '../constants/screens';
 import HomeScreen from '../features/home/screens/HomeScreen';
 import DetailedArticle from '../features/home/screens/DetailedArticle';
-import {Article} from '../models/article';
+import {SelectedArticle} from '../models/article';
+import colors from '../constants/colors';
 const Stack = createNativeStackNavigator();
 const HomeNavigation = () => {
   return (
@@ -18,8 +19,16 @@ const HomeNavigation = () => {
       <Stack.Screen
         name={HomeStackScreens.DetailedArticleScreen}
         component={DetailedArticle}
-        options={{}}
-        initialParams={{article: {} as Article}}
+        options={{
+          title: '',
+          headerStyle: {
+            backgroundColor: colors.BLUE_DARK,
+          },
+          headerTintColor: colors.CLEAN_WHITE,
+        }}
+        initialParams={{
+          selectedArticle: {} as SelectedArticle,
+        }}
       />
     </Stack.Navigator>
   );
