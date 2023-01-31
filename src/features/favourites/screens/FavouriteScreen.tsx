@@ -32,5 +32,6 @@ const styles = StyleSheet.create({
     fontWeight: '500',
     paddingHorizontal: 16,
     paddingTop: 15,
+    color: colors.BLUE_DARK,
   },
 });
