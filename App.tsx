@@ -11,10 +11,13 @@ import AppNavigation from './src/navigation/AppNavigation';
 
 const App = () => {
   const [initializing, setInitializing] = useState(true);
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const [user, setUser] = useState<FirebaseAuthTypes.User | null>();
   const onAuthStateChanged = (enteredUser: FirebaseAuthTypes.User | null) => {
     setUser(enteredUser);
-    if (initializing) setInitializing(false);
+    if (initializing) {
+      setInitializing(false);
+    }
   };
 
   useEffect(() => {

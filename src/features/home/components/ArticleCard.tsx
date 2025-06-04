@@ -56,7 +56,7 @@ const ArticleCard = ({
         </Text>
         <View style={styles.buttonContainer}>
           <PrimaryButton
-            text="NAVIAGTE TO DISPATCH"
+            text="NAVIGATE TO DISPATCH"
             icon={true}
             primary={true}
             onPress={() =>

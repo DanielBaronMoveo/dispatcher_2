@@ -6,7 +6,7 @@ interface initialStateI {
 }
 
 const articleSlice = createSlice({
-  name: 'auth',
+  name: 'article',
   initialState: {
     article: [],
   } as initialStateI,
