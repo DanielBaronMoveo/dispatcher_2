@@ -1,7 +1,7 @@
 import {MessageType, showMessage} from 'react-native-flash-message';
 import {authErrorMessages, authErrors, types} from '../constants/authErrors';
 
-export class ErrorExeption extends Error {
+export class ErrorException extends Error {
   code: string;
   constructor(code: string) {
     super();

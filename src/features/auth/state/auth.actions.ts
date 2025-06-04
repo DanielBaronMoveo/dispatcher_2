@@ -1,7 +1,7 @@
 import {createAsyncThunk} from '@reduxjs/toolkit';
 import auth from '@react-native-firebase/auth';
 import {
-  ErrorExeption,
+  ErrorException,
   errorHandlingService,
 } from '../../../utils/errorHandling';
 import {authErrors, types} from '../../../constants/authErrors';
@@ -24,10 +24,10 @@ export const logister = createAsyncThunk(
           password.length === 0 ||
           rePassword.length === 0
         ) {
-          throw new ErrorExeption(authErrors.EMPTY_FIELDS);
+          throw new ErrorException(authErrors.EMPTY_FIELDS);
         }
         if (password !== rePassword) {
-          throw new ErrorExeption(authErrors.PASSWORDS_DO_NOT_MATCH);
+          throw new ErrorException(authErrors.PASSWORDS_DO_NOT_MATCH);
         }
         const user = await auth().createUserWithEmailAndPassword(
           email,
@@ -41,7 +41,7 @@ export const logister = createAsyncThunk(
         return user.user;
       } else {
         if (email.length === 0 || password.length === 0) {
-          throw new ErrorExeption(authErrors.EMPTY_FIELDS);
+          throw new ErrorException(authErrors.EMPTY_FIELDS);
         }
         const user = await auth().signInWithEmailAndPassword(email, password);
         errorHandlingService.showDynamicMessage(

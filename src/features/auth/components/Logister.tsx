@@ -102,9 +102,7 @@ const Logister = () => {
             styleProps={!email.isValid ? styles.invalidInputBorder : null}
           />
           {!email.isValid && (
-            <Text style={styles.errorText}>
-              One or more files is un validated
-            </Text>
+            <Text style={styles.errorText}>One or more fields are invalid</Text>
           )}
         </View>
         <View style={styles.input}>
@@ -118,9 +116,7 @@ const Logister = () => {
             styleProps={!password.isValid ? styles.invalidInputBorder : null}
           />
           {!password.isValid && (
-            <Text style={styles.errorText}>
-              One or more files is un validated
-            </Text>
+            <Text style={styles.errorText}>One or more fields are invalid</Text>
           )}
         </View>
         {isSignup && (
